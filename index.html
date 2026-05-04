@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Art'S et Couleurs Feynaud Fabienne — Salon de coiffure — Artigues-près-Bordeaux</title>
+  <meta name="description" content="Découvrez Art'S et Couleurs, votre salon de coiffure chaleureux et professionnel à Artigues-près-Bordeaux. Prendre rendez-vous dès maintenant !" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #D9776F;
+      --secondary: #F5CBA7;
+      --background: #FFF7F2;
+      --text: #3B2F2F;
+      --cta: #B84A39;
+      --radius: 12px;
+      --font-heading: 'Quicksand', sans-serif;
+      --font-body: 'Montserrat', sans-serif;
+      --section-padding: 96px 24px;
+      --section-padding-mobile: 48px 16px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--background);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 { font-family: var(--font-heading); }
+
+    img { max-width: 100%; display: block; }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ===== NAVIGATION ===== */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(255, 247, 242, 0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(217, 119, 111, 0.15);
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--primary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 200px;
+    }
+
+    .nav-links {
+      display: none;
+      list-style: none;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--primary); }
+
+    .nav-cta-btn {
+      background: var(--cta);
+      color: #fff !important;
+      padding: 8px 18px;
+      border-radius: var(--radius);
+      font-weight: 600 !important;
+      transition: opacity 0.2s !important;
+    }
+
+    .nav-cta-btn:hover { opacity: 0.88; }
+
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 64px; left: 0; right: 0;
+      background: var(--background);
+      border-bottom: 1px solid rgba(217, 119, 111, 0.15);
+      z-index: 999;
+      padding: 16px 24px 24px;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu a {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text);
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(217, 119, 111, 0.1);
+    }
+
+    .mobile-menu a:last-child { border-bottom: none; }
+
+    @media (min-width: 768px) {
+      .nav-links { display: flex; }
+      .hamburger { display: none; }
+      .mobile-menu { display: none !important; }
+      .nav-brand { max-width: none; }
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, #D9776F 0%, #F5CBA7 50%, #B84A39 100%);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(30, 15, 10, 0.45);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 24px 16px;
+      max-width: 700px;
+      width: 100%;
+    }
+
+    .hero-content h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.6rem, 5vw, 3.8rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    }
+
+    .hero-content p {
+      font-family: var(--font-body);
+      font-size: clamp(0.95rem, 2.5vw, 1.2rem);
+      color: rgba(255,255,255,0.92);
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn-primary {
+      background: var(--cta);
+      color: #fff;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 32px;
+      border-radius: var(--radius);
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      max-width: 320px;
+      transition: opacity 0.2s, transform 0.2s;
+      display: inline-block;
+      text-align: center;
+    }
+
+    .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+
+    .btn-secondary {
+      background: transparent;
+      color: #fff;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 13px 32px;
+      border-radius: var(--radius);
+      border: 2px solid rgba(255,255,255,0.7);
+      cursor: pointer;
+      width: 100%;
+      max-width: 320px;
+      transition: background 0.2s, border-color 0.2s;
+      display: inline-block;
+      text-align: center;
+    }
+
+    .btn-secondary:hover { background: rgba(255,255,255,0.12); border-color: #fff; }
+
+    @media (min-width: 768px) {
+      .hero-buttons { flex-direction: row; justify-content: center; }
+      .btn-primary, .btn-secondary { width: auto; }
+    }
+
+    /* ===== SECTION BASE ===== */
+    .section {
+      padding: var(--section-padding-mobile);
+    }
+
+    @media (min-width: 768px) {
+      .section { padding: var(--section-padding); }
+    }
+
+    .section-headline {
+      font-family: var(--font-heading);
+      font-size: clamp(1.5rem, 3vw, 2.4rem);
+      font-weight: 700;
+      color: var(--text);
+      text-align: center;
+      margin-bottom: 48px;
+      position: relative;
+    }
+
+    .section-headline::after {
+      content: '';
+      display: block;
+      width: 56px;
+      height: 3px;
+      background: var(--primary);
+      border-radius: 2px;
+      margin: 12px auto 0;
+    }
+
+    /* ===== ABOUT ===== */
+    .about-section { background: #fff; }
+
+    .about-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .about-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .about-text p {
+      font-size: 0.97rem;
+      line-height: 1.8;
+      color: var(--text);
+    }
+
+    .about-visual {
+      background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+      border-radius: var(--radius);
+      min-height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .about-visual-inner {
+      text-align: center;
+      color: #fff;
+    }
+
+    .about-visual-inner .icon {
+      font-size: 3.5rem;
+      margin-bottom: 16px;
+    }
+
+    .about-visual-inner p {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .trust-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    @media (min-width: 768px) {
+      .trust-row { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    .trust-item {
+      background: var(--background);
+      border-radius: var(--radius);
+      padding: 16px;
+      text-align: center;
+    }
+
+    .trust-item .trust-icon { font-size: 1.6rem; margin-bottom: 8px; }
+
+    .trust-item p {
+      font-size: 0.8rem;
+      font-weight: 600;
+      font-family: var(--font-heading);
+      color: var(--text);
+    }
+
+    /* ===== SERVICES ===== */
+    .services-section { background: var(--background); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 600px) { .services-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1024px) { .services-grid { grid-template-columns: repeat(4, 1fr); } }
+
+    .service-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      box-shadow: 0 2px 16px rgba(59, 47, 47, 0.07);
+      transition: transform 0.2s, box-shadow 0.2s;
+      border-top: 3px solid var(--primary);
+    }
+
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(59, 47, 47, 0.12); }
+
+    .service-card .service-icon { font-size: 2rem; margin-bottom: 14px; }
+
+    .service-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: var(--text);
+      opacity: 0.85;
+    }
+
+    /* ===== TEAM / EQUIPE ===== */
+    .equipe-section { background: #fff; }
+
+    .equipe-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .equipe-card {
+      background: var(--background);
+      border-radius: var(--radius);
+      padding: 40px 32px;
+      display: inline-block;
+      max-width: 480px;
+      width: 100%;
+    }
+
+    .equipe-avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--secondary), var(--primary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 2.5rem;
+    }
+
+    .equipe-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .equipe-card .role {
+      font-size: 0.9rem;
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .equipe-card p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--text);
+      opacity: 0.85;
+    }
+
+    /* ===== REVIEWS ===== */
+    .reviews-section { background: var(--background); }
+
+    .reviews-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .rating-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 12px 20px;
+      box-shadow: 0 2px 12px rgba(59,47,47,0.08);
+      margin-top: 16px;
+    }
+
+    .stars { color: #F5A623; font-size: 1.1rem; letter-spacing: 1px; }
+
+    .rating-num {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--text);
+    }
+
+    .rating-count {
+      font-size: 0.85rem;
+      color: var(--text);
+      opacity: 0.65;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 768px) { .reviews-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    .review-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 2px 14px rgba(59,47,47,0.07);
+    }
+
+    .review-stars { color: #F5A623; font-size: 1rem; margin-bottom: 12px; }
+
+    .review-text {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--text);
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+
+    .review-author {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--primary);
+      text-transform: capitalize;
+    }
+
+    /* ===== GALLERY ===== */
+    .gallery-section { background: #fff; }
+
+    .gallery-caption {
+      text-align: center;
+      font-size: 0.95rem;
+      color: var(--text);
+      opacity: 0.75;
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .gallery-placeholder {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    @media (min-width: 768px) { .gallery-placeholder { grid-template-columns: repeat(3, 1fr); } }
+
+    .gallery-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      position: relative;
+    }
+
+    .gallery-item:nth-child(1) { background: linear-gradient(135deg, #F5CBA7, #D9776F); }
+    .gallery-item:nth-child(2) { background: linear-gradient(135deg, #D9776F, #B84A39); }
+    .gallery-item:nth-child(3) { background: linear-gradient(135deg, #FFF7F2, #F5CBA7); }
+    .gallery-item:nth-child(4) { background: linear-gradient(135deg, #B84A39, #D9776F); }
+    .gallery-item:nth-child(5) { background: linear-gradient(135deg, #F5CBA7, #FFF7F2); }
+    .gallery-item:nth-child(6) { background: linear-gradient(135deg, #D9776F, #F5CBA7); }
+
+    .gallery-item-label {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: rgba(59,47,47,0.55);
+      color: #fff;
+      font-family: var(--font-heading);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 8px 12px;
+      text-align: center;
+    }
+
+    /* ===== HOURS & LOCATION ===== */
+    .hours-section { background: var(--background); }
+
+    .hours-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 768px) { .hours-grid { grid-template-columns: 1fr 1fr; } }
+
+    .hours-table {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: 0 2px 14px rgba(59,47,47,0.07);
+    }
+
+    .hours-table h3 {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(217,119,111,0.1);
+      font-size: 0.9rem;
+    }
+
+    .hours-row:last-child { border-bottom: none; }
+
+    .hours-day {
+      font-weight: 600;
+      font-family: var(--font-heading);
+      text-transform: capitalize;
+    }
+
+    .hours-time { color: var(--text); opacity: 0.8; }
+    .hours-closed { color: var(--primary); font-weight: 600; }
+
+    .hours-today {
+      background: rgba(217,119,111,0.08);
+      border-radius: 6px;
+      padding: 10px 8px;
+      margin: 0 -8px;
+    }
+
+    .map-container {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 2px 14px rgba(59,47,47,0.07);
+      min-height: 320px;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 320px;
+      border: none;
+      display: block;
+    }
+
+    .contact-info {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 20px 28px;
+      margin-top: 16px;
+      box-shadow: 0 2px 14px rgba(59,47,47,0.07);
+    }
+
+    .contact-info-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(217,119,111,0.1);
+      font-size: 0.9rem;
+    }
+
+    .contact-info-row:last-child { border-bottom: none; }
+
+    .contact-info-row .ci-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+
+    .contact-info-row a { color: var(--primary); font-weight: 600; }
+
+    /* ===== CONTACT FORM ===== */
+    .contact-section { background: #fff; }
+
+    .contact-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .contact-instruction {
+      text-align: center;
+      font-size: 0.95rem;
+      color: var(--text);
+      opacity: 0.8;
+      margin-bottom: 36px;
+      line-height: 1.6;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group label {
+      font-family: var(--font-heading);
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--text);
+      background: var(--background);
+      border: 1.5px solid rgba(217,119,111,0.3);
+      border-radius: var(--radius);
+      padding: 12px 16px;
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus { border-color: var(--primary); }
+
+    .form-group textarea { resize: vertical; min-height: 120px; }
+
+    .form-submit {
+      background: var(--cta);
+      color: #fff;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px;
+      border-radius: var(--radius);
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .form-submit:hover { opacity: 0.88; transform: translateY(-1px); }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--text);
+      color: rgba(255,255,255,0.85);
+      padding: 48px 16px 32px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    @media (min-width: 768px) {
+      .footer-inner { grid-template-columns: 2fr 1fr 1fr; }
+    }
+
+    .footer-brand h3 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--secondary);
+      margin-bottom: 12px;
+    }
+
+    .footer-brand p {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      opacity: 0.8;
+    }
+
+    .footer-rating {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: 10px 14px;
+      margin-top: 16px;
+    }
+
+    .footer-rating .stars { font-size: 0.95rem; }
+    .footer-rating .rating-num { font-size: 0.95rem; color: #fff; }
+    .footer-rating .rating-count { font-size: 0.8rem; }
+
+    .footer-col h4 {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--secondary);
+      margin-bottom: 14px;
+    }
+
+    .footer-col p, .footer-col a {
+      font-size: 0.88rem;
+      line-height: 1.8;
+      opacity: 0.8;
+      display: block;
+    }
+
+    .footer-col a:hover { opacity: 1; color: var(--secondary); }
+
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 32px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+      font-size: 0.8rem;
+      opacity: 0.5;
+    }
+
+    /* ===== MODAL ===== */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.72);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .modal-overlay.active { display: flex; }
+
+    .modal-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 32px;
+      width: 90%;
+      max-width: 420px;
+      position: relative;
+      animation: fadeInModal 0.2s ease;
+    }
+
+    @keyframes fadeInModal {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 12px; right: 16px;
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      color: #888;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .modal-close:hover { color: var(--text); }
+
+    .modal-title {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 14px;
+    }
+
+    .modal-body {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .modal-cta {
+      display: block;
+      width: 100%;
+      background: var(--cta);
+      color: #fff;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px;
+      border-radius: var(--radius);
+      border: none;
+      cursor: pointer;
+      text-align: center;
+      transition: opacity 0.2s;
+    }
+
+    .modal-cta:hover { opacity: 0.88; }
+
+    /* ===== FADE-IN ANIMATION ===== */
+    .fade-in {
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+
+    .fade-in.visible { opacity: 1; }
+
+    /* ===== SCROLLBAR ===== */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--background); }
+    ::-webkit-scrollbar-thumb { background: var(--secondary); border-radius: 3px; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" role="navigation" aria-label="Navigation principale">
+    <span class="nav-brand">Art'S et Couleurs</span>
+    <ul class="nav-links">
+      <li><a href="#about">À propos</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#equipe">Équipe</a></li>
+      <li><a href="#avis">Avis</a></li>
+      <li><a href="#galerie">Galerie</a></li>
+      <li><a href="#contact" class="nav-cta-btn">Rendez-vous</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu" role="menu">
+    <a href="#about" onclick="closeMobileMenu()">À propos</a>
+    <a href="#services" onclick="closeMobileMenu()">Services</a>
+    <a href="#equipe" onclick="closeMobileMenu()">Équipe</a>
+    <a href="#avis" onclick="closeMobileMenu()">Avis clients</a>
+    <a href="#galerie" onclick="closeMobileMenu()">Galerie</a>
+    <a href="#horaires" onclick="closeMobileMenu()">Horaires</a>
+    <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="hero" aria-label="Accueil">
+    <div class="hero-overlay"></div>
+    <div class="hero-content fade-in">
+      <h1>Votre salon de coiffure à Artigues</h1>
+      <p>Chaleur, professionnalisme et conseils personnalisés pour vos cheveux.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn-primary">Prendre rendez-vous</a>
+        <a href="#about" class="btn-secondary">En savoir plus</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / PRESENTATION -->
+  <section class="section about-section" id="about" aria-label="À propos">
+    <div class="about-inner">
+      <h2 class="section-headline fade-in">À propos de nous</h2>
+      <div class="about-grid">
+        <div class="about-text fade-in">
+          <p>Bienvenue chez Art'S et Couleurs Feynaud Fabienne, votre salon de coiffure à Artigues-près-Bordeaux. Notre salon est conçu pour être accessible à tous, avec une entrée et un parking adaptés aux fauteuils roulants. Nous accueillons chaleureusement les enfants et acceptons divers modes de paiement, y compris les cartes de crédit, de débit et les paiements mobiles NFC. Pour votre confort, nous vous recommandons de prendre rendez-vous. Profitez de nos services dans un cadre moderne et accueillant, avec des toilettes à votre disposition.</p>
+          <div class="trust-row">
+            <div class="trust-item">
+              <div class="trust-icon">♿</div>
+              <p>Accès PMR</p>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">👶</div>
+              <p>Enfants bienvenus</p>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">💳</div>
+              <p>Paiement NFC</p>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">📅</div>
+              <p>Sur rendez-vous</p>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual fade-in">
+          <div class="about-visual-inner">
+            <div class="icon">✂️</div>
+            <p>Art'S et Couleurs<br/>Feynaud Fabienne</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section services-section" id="services" aria-label="Nos services">
+    <h2 class="section-headline fade-in">Nos services</h2>
+    <div class="services-grid">
+      <div class="service-card fade-in">
+        <div class="service-icon">🎨</div>
+        <h3>Coloration tendance</h3>
+        <p>Des couleurs vibrantes et personnalisées pour sublimer votre style.</p>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon">💍</div>
+        <h3>Coiffures événementielles</h3>
+        <p>Des coiffures élégantes pour toutes vos occasions spéciales.</p>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon">🌿</div>
+        <h3>Soins capillaires</h3>
+        <p>Des soins professionnels pour la santé et la beauté de vos cheveux.</p>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon">💬</div>
+        <h3>Conseils personnalisés</h3>
+        <p>Des conseils d'experts pour un look qui vous ressemble.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPE -->
+  <section class="section equipe-section" id="equipe" aria-label="Notre équipe">
+    <h2 class="section-headline fade-in">Notre équipe</h2>
+    <div class="equipe-inner fade-in">
+      <div class="equipe-card">
+        <div class="equipe-avatar">👩‍🦱</div>
+        <h3>Fabienne Feynaud</h3>
+        <p class="role">Coiffeuse & Fondatrice</p>
+        <p>Passionnée par la coiffure depuis de nombreuses années, Fabienne met son expertise et sa créativité au service de chaque cliente. Son écoute attentive et ses conseils personnalisés font la réputation du salon.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVIS CLIENTS -->
+  <section class="section reviews-section" id="avis" aria-label="Avis clients">
+    <div class="reviews-header fade-in">
+      <h2 class="section-headline">Avis clients</h2>
+      <div class="rating-badge">
+        <span class="stars">★★★★★</span>
+        <span class="rating-num">4.7</span>
+        <span class="rating-count">71 avis Google</span>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card fade-in">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Je suis ravie de mon expérience chez Fabienne. Il y a un vrai échange, un côté humain qui fait toute la différence. Les conseils sont vraiment professionnels, et je me sens super bien..."</p>
+        <span class="review-author">Sarah Rubin</span>
+      </div>
+      <div class="review-card fade-in">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Très satisfaite du travail réalisé par Fabienne, mon balayage de la semaine dernière était parfait. Fabienne est toujours à l'écoute et comprend et réalise toujours ce que je lui demande..."</p>
+        <span class="review-author">Olivia Mignot</span>
+      </div>
+      <div class="review-card fade-in">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Cela fait plusieurs années que je vais chez Fabienne pour mes mèches et mes huiles éclaircissantes afin d'éclaircir ma base. J'étais également satisfaite de mon ancienne coiffeuse, mais lorsqu'on..."</p>
+        <span class="review-author">Isabelle Billou</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIE -->
+  <section class="section gallery-section" id="galerie" aria-label="Galerie">
+    <h2 class="section-headline fade-in">Galerie</h2>
+    <p class="gallery-caption fade-in">Découvrez nos réalisations avant/après et inspirez-vous pour votre prochaine visite.</p>
+    <div class="gallery-placeholder">
+      <div class="gallery-item fade-in">
+        <span>✂️</span>
+        <div class="gallery-item-label">Coloration</div>
+      </div>
+      <div class="gallery-item fade-in">
+        <span>💇‍♀️</span>
+        <div class="gallery-item-label">Coupe & Style</div>
+      </div>
+      <div class="gallery-item fade-in">
+        <span>🌟</span>
+        <div class="gallery-item-label">Balayage</div>
+      </div>
+      <div class="gallery-item fade-in">
+        <span>💆‍♀️</span>
+        <div class="gallery-item-label">Soins</div>
+      </div>
+      <div class="gallery-item fade-in">
+        <span>👰</span>
+        <div class="gallery-item-label">Coiffure événementielle</div>
+      </div>
+      <div class="gallery-item fade-in">
+        <span>🎨</span>
+        <div class="gallery-item-label">Mèches & Reflets</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HORAIRES & LOCALISATION -->
+  <section class="section hours-section" id="horaires" aria-label="Horaires et localisation">
+    <h2 class="section-headline fade-in">Horaires et localisation</h2>
+    <div class="hours-grid">
+      <div class="fade-in">
+        <div class="hours-table">
+          <h3>📅 Nos horaires</h3>
+          <div class="hours-row" id="row-lundi">
+            <span class="hours-day">Lundi</span>
+            <span class="hours-closed">Fermé</span>
+          </div>
+          <div class="hours-row" id="row-mardi">
+            <span class="hours-day">Mardi</span>
+            <span class="hours-time">09:00 – 19:00</span>
+          </div>
+          <div class="hours-row" id="row-mercredi">
+            <span class="hours-day">Mercredi</span>
+            <span class="hours-time">09:00 – 19:00</span>
+          </div>
+          <div class="hours-row" id="row-jeudi">
+            <span class="hours-day">Jeudi</span>
+            <span class="hours-time">09:00 – 19:00</span>
+          </div>
+          <div class="hours-row" id="row-vendredi">
+            <span class="hours-day">Vendredi</span>
+            <span class="hours-time">09:00 – 19:00</span>
+          </div>
+          <div class="hours-row" id="row-samedi">
+            <span class="hours-day">Samedi</span>
+            <span class="hours-time">09:00 – 19:00</span>
+          </div>
+          <div class="hours-row" id="row-dimanche">
+            <span class="hours-day">Dimanche</span>
+            <span class="hours-closed">Fermé</span>
+          </div>
+        </div>
+        <div class="contact-info">
+          <div class="contact-info-row">
+            <span class="ci-icon">📍</span>
+            <span>36 Rue Jean Baptiste Charcot, 33370 Artigues-près-Bordeaux, France</span>
+          </div>
+          <div class="contact-info-row">
+            <span class="ci-icon">📞</span>
+            <a href="tel:+33557802557">+33 5 57 80 25 57</a>
+          </div>
+          <div class="contact-info-row">
+            <span class="ci-icon">🗺️</span>
+            <a href="https://maps.google.com/?q=44.8649661,-0.47976739999999996" target="_blank" rel="noopener">Voir sur Google Maps</a>
+          </div>
+        </div>
+      </div>
+      <div class="map-container fade-in">
+        <iframe
+          src="https://maps.google.com/maps?q=44.8649661,-0.47976739999999996&z=16&output=embed"
+          title="Localisation Art'S et Couleurs Feynaud Fabienne"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact-section" id="contact" aria-label="Contact">
+    <div class="contact-inner">
+      <h2 class="section-headline fade-in">Contactez-nous</h2>
+      <p class="contact-instruction fade-in">Pour toute question ou prise de rendez-vous, contactez-nous dès maintenant.</p>
+      <form class="contact-form fade-in" id="contactForm" action="#" novalidate>
+        <div class="form-group">
+          <label for="name">Nom complet</label>
+          <input type="text" id="name" name="name" placeholder="Votre nom" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Adresse e-mail</label>
+          <input type="email" id="email" name="email" placeholder="votre@email.com" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Téléphone (optionnel)</label>
+          <input type="tel" id="phone" name="phone" placeholder="+33 6 00 00 00 00" />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Votre message ou demande de rendez-vous..." required></textarea>
+        </div>
+        <button type="submit" class="form-submit">Envoyer le message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" aria-label="Pied de page">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>Art'S et Couleurs Feynaud Fabienne</h3>
+        <p>Votre salon de coiffure chaleureux et professionnel à Artigues-près-Bordeaux. Coloration, soins, coiffures événementielles et conseils personnalisés.</p>
+        <div class="footer-rating">
+          <span class="stars">★★★★★</span>
+          <span class="rating-num">4.7</span>
+          <span class="rating-count">/ 71 avis</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Horaires</h4>
+        <p>Lundi : Fermé</p>
+        <p>Mar – Ven : 09:00–19:00</p>
+        <p>Samedi : 09:00–19:00</p>
+        <p>Dimanche : Fermé</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>36 Rue Jean Baptiste Charcot</p>
+        <p>33370 Artigues-près-Bordeaux</p>
+        <a href="tel:+33557802557">+33 5 57 80 25 57</a>
+        <a href="https://maps.google.com/?q=44.8649661,-0.47976739999999996" target="_blank" rel="noopener" style="margin-top:8px;">📍 Voir sur Google Maps</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Art'S et Couleurs Feynaud Fabienne — 36 Rue Jean Baptiste Charcot, 33370 Artigues-près-Bordeaux</p>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose" aria-label="Fermer">×</button>
+      <h2 class="modal-title" id="modalTitle">Formulaire de contact</h2>
+      <p class="modal-body">
+        Merci de votre intérêt pour Art'S et Couleurs Feynaud Fabienne !<br/><br/>
+        Le formulaire de contact complet est disponible dans la version complète du site. Pour activer cette fonctionnalité et permettre à vos clients de vous contacter directement en ligne, il vous suffit d'acquérir votre site web.<br/><br/>
+        Cliquez ci-dessous pour en savoir plus et obtenir votre site professionnel dès aujourd'hui.
+      </p>
+      <a href="mailto:team@kamkod.com?subject=Website%20Art'S%20et%20Couleurs%20Feynaud%20Fabienne%20%E2%80%94%20ChIJB4dLlHYvVQ0RFnj5HzNA1o0" class="modal-cta">
+        Activer mon formulaire de contact
+      </a>
+    </div>
+  </div>
+
+  <script>
+    // ===== HAMBURGER MENU =====
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', function() {
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+
+    // ===== FADE-IN ON SCROLL =====
+    const fadeEls = document.querySelectorAll('.fade-in');
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    fadeEls.forEach(function(el) { observer.observe(el); });
+
+    // ===== HIGHLIGHT TODAY'S HOURS =====
+    (function() {
+      const days = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'];
+      const today = days[new Date().getDay()];
+      const todayRow = document.getElementById('row-' + today);
+      if (todayRow) {
+        todayRow.classList.add('hours-today');
+        const dayLabel = todayRow.querySelector('.hours-day');
+        if (dayLabel) dayLabel.textContent += ' (aujourd\'hui)';
+      }
+    })();
+
+    // ===== MODAL =====
+    const modalOverlay = document.getElementById('modalOverlay');
+    const modalClose = document.getElementById('modalClose');
+    const contactForm = document.getElementById('contactForm');
+
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      modalOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+
+    modalClose.addEventListener('click', function() {
+      modalOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+
+    modalOverlay.addEventListener('click', function(e) {
+      if (e.target === modalOverlay) {
+        modalOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+        modalOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // ===== SMOOTH NAV SCROLL OFFSET =====
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          const offset = 70;
+          const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // ===== HERO FADE IN ON LOAD =====
+    window.addEventListener('load', function() {
+      const heroContent = document.querySelector('.hero .fade-in');
+      if (heroContent) {
+        setTimeout(function() { heroContent.classList.add('visible'); }, 200);
+      }
+    });
+  </script>
+</body>
+</html>
